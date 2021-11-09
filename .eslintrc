@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "standard-with-typescript",
+    "next/core-web-vitals"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // Disable error in next-env.d.ts
+    "@typescript-eslint/triple-slash-reference": "off",
+    // Prefer double-quoted JSX props
+    "jsx-quotes": ["error", "prefer-double"],
+    // Enable no-console warnings
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    // Disable explicit function return type
+    "@typescript-eslint/explicit-function-return-type": "off",
+    // Add new line after all imports
+    "import/newline-after-import": 1,
+    // Sort import
+    "import/order": ["warn", {
+      "alphabetize": { "order": "asc", "caseInsensitive": true },
+      "newlines-between": "always",
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "pathGroups": [
+        { "pattern": "@/**", "group": "internal" }
+      ],
+      "pathGroupsExcludedImportTypes": ["builtin"]
+    }]
+  }
+}
